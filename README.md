@@ -10,9 +10,9 @@ index, name, url, alarm\
 
 ### Telegram token and chat-id:
 The host environment should have the following environment variables or be set during
-the creation of the docker instance (docker run -e TELEGRAMSTOCKBOT_...)
-TELEGRAMSTOCKBOT_TOKEN
-TELEGRAMSTOCKBOT_CHATID
+the creation of the docker instance (docker run -e TELEGRAMSTOCKBOT_...)\
+- TELEGRAMSTOCKBOT_TOKEN
+- TELEGRAMSTOCKBOT_CHATID
 
 You can get a token from the @botfather bot in Telegram. Using the @userinfobot
 you can get your own chatid. Before receiving messages, you need to open the chat
