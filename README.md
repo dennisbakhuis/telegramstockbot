@@ -22,8 +22,9 @@ to your own bot.
 docker build -t stockbot .
 
 ### Docker run:
-docker run -d --rm \
+```
+    docker run -d --rm \
     -e TELEGRAMSTOCKBOT_TOKEN \
     -e TELEGRAMSTOCKBOT_CHATID \
     stockbot
-
+```
