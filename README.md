@@ -4,8 +4,8 @@ Stocks to be checked are in the stocks.txt file. All is run from a Docker Contai
 
 ### Stocks.txt file
 Currently only iex.nl pages are parsed but this can easily be extended. The stocks.txt
- has the following format:
-index, name, url, alarm
+ has the following format:\
+index, name, url, alarm\
 2, aegon, https://www.iex.nl/Aandeel-Koers/11754/Aegon.aspx, 3.00
 
 ### Telegram token and chat-id:
