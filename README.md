@@ -19,11 +19,13 @@ you can get your own chatid. Before receiving messages, you need to open the cha
 to your own bot.
 
 ### Docker build:
+```
 docker build -t stockbot .
+```
 
 ### Docker run:
 ```
-    docker run -d --rm \
+docker run -d --rm \
     -e TELEGRAMSTOCKBOT_TOKEN \
     -e TELEGRAMSTOCKBOT_CHATID \
     stockbot
