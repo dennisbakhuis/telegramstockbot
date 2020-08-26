@@ -1,5 +1,5 @@
 from os import environ
-from time import sleep
+from time import time, sleep
 
 import bs4
 import requests
@@ -37,14 +37,29 @@ def scrape_stock_price(url):
 
 ## Main loop
 send('Stock Alarm started...', telegram_user_id, token)
+error_msg_send = False
 while True:
+    errors = 0
     for ix, row in stocks.iterrows():
         try:
             stock_price = scrape_stock_price(row.url)
             message = f"{row['index']} - {row['name']} -=> €{stock_price:.3f} (alarm: €{row['alarm']:.3f})"
             print(message)  # for the log
-            if stock_price >= row['alarm']:
+            if stock_price >= row['above']:
+                send(message, telegram_user_id, token)
+            if stock_price <= row['below']:
                 send(message, telegram_user_id, token)
         except:
             send('Error getting stock price...', telegram_user_id, token)
+            errors += 1
+
+    if errors >= 1 and not error_msg_send:
+        send('Connection error...', telegram_user_id, token)
+        error_msg_send = True
+    if errors == 1 and error_msg_send:
+        send('Connection restored...', telegram_user_id, token)
+        error_msg_send = False
+
     sleep(wait_timer)
+
+

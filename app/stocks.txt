@@ -1,2 +1,2 @@
-index,name,url,alarm
-1,aegon,https://www.iex.nl/Aandeel-Koers/11754/Aegon.aspx,3.00
+index,name,url,below,above
+1,aegon,https://www.iex.nl/Aandeel-Koers/11754/Aegon.aspx,2.33,2.70
